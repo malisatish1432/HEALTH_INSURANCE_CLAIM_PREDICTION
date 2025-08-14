@@ -33,10 +33,17 @@
 #### 🔸Mean Absolute Error (MAE)
 #### 🔸R² Score
 # 🚀 Results :
-### 🔸Model	R² Score	MAE	MSE
-### 🔸Random Forest	0.93	120.5	28045
-### 🔸Ridge Regression	0.88	155.2	39012
-### 🔸Linear Regression	0.86	162.8	42567
+## 🚀 Regression Results  
+
+| Model                 | MSE           | RMSE        | MAE         | R²       | Adjusted R² |
+|-----------------------|--------------:|------------:|------------:|---------:|------------:|
+| Linear Regression     | 61012230.0    | 7811.03     | 6051.21     | 0.1478   | 0.1399      |
+| Ridge Regression      | 61009670.0    | 7810.87     | 6051.44     | 0.1478   | 0.1400      |
+| Lasso Regression      | 61012560.0    | 7811.05     | 6051.45     | 0.1478   | 0.1399      |
+| ElasticNet Regression | 60669980.0    | 7789.09     | 6063.14     | 0.1526   | 0.1448      |
+| Random Forest         | **8276888.0** | **2876.96** | **1300.60** | **0.8844*| **0.8833**|
+| XGBoost Regressor     | 9833185.0     | 3135.79     | 1799.90     | 0.8626   | 0.8614      |
+
 ### 🔸📌 Random Forest Regressor was chosen as the final model due to its highest accuracy and lowest error.
 # 📈 Visualizations :
 ### 🔸Feature Correlation Heatmap
@@ -47,5 +54,5 @@
 ### 🔸Python: Pandas, NumPy, Scikit-learn, Statsmodels, Matplotlib, Seaborn
 ### 🔸Environment: Jupyter Notebook
 # 📜 Conclusion :
-### 🔸Using Random Forest Regressor, we achieved an R² Score of 0.93 with a low MAE, making it effective for predicting claim amounts.
+### 🔸Using Random Forest Regressor, we achieved an R² Score of 0.8844 with a low MAE, making it effective for predicting claim amounts.
 ### 🔸This approach can help insurance companies reduce risk, improve pricing models, and detect anomalies in claims processing.
