@@ -1,6 +1,29 @@
 # 🏥 Health Insurance Claim Prediction  
 
 💡 *Predicting claim amounts using advanced machine learning regression models*  
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)]()
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)]()
+[![XGBoost](https://img.shields.io/badge/XGBoost-Regressor-red)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
+[![LightGBM](https://img.shields.io/badge/LightGBM-Regressor-lightgreen)]()
+[![Random Forest](https://img.shields.io/badge/RandomForest-Regression-yellowgreen)]()
+
+
+---
+
+## 🧭 Table of Contents
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Dataset](#-dataset)
+- [Workflow](#-workflow)
+- [Model Performance](#-model-performance)
+- [Visualizations](#-visualizations)
+- [Insights](#-insights)
+- [Limitations](#-limitations)
+- [Future Work](#-future-work)
+- [Tools & Libraries](#-tools--libraries)
+- [Conclusion](#-conclusion)
+- [Author](#-author)
 
 ---
 
