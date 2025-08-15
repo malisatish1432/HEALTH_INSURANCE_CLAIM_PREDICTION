@@ -1,145 +1,141 @@
-# 🏥 Health Insurance Claim Prediction
+# 🏥 Health Insurance Claim Prediction  
 
-**💡 Predicting claim amounts using advanced machine learning regression models**
+💡 *Predicting claim amounts using advanced machine learning regression models*  
 
 ---
 
-## 🔍 Overview
-This project aims to predict **medical claim amounts** for health insurance policyholders based on demographic, lifestyle, and medical attributes.  
-Accurate claim prediction helps insurance providers:
-- Set **fair premiums** for customers  
+## 🔍 Overview  
+This project predicts **medical claim amounts** for health insurance policyholders using demographic, lifestyle, and medical attributes.  
+Accurate claim predictions help insurance providers:  
+- Set **fair premiums**  
 - Detect **fraudulent or excessive claims**  
 - Improve **risk management**  
-- Design **better policies & benefits**
+- Design **better policies & benefits**  
 
 ---
 
-## 📊 Problem Statement
-- **Goal:** Predict the amount of a claim (numeric) filed by a policyholder  
+## 📊 Problem Statement  
+- **Goal:** Predict the amount of a claim filed by a policyholder  
 - **Type:** Regression Problem  
-- **Target Variable:** `Claim`
+- **Target Variable:** `Claim` (numeric)  
 
 ---
 
-## 📁 Dataset
+## 📁 Dataset  
 - **Name:** Health Insurance Claim Dataset  
-- **Source:** *Kaggle*  
-- **Dataset Shape:** ~ *(15000,13)*  
+- **Source:** Kaggle  
+- **Shape:** *(15000, 13)*  
 
-**Features:**
-- **Age** – Age of the policyholder (numeric)  
-- **Sex** – Gender (categorical)  
-- **Weight** – Weight in kilograms (numeric)  
-- **BMI** – Body Mass Index (numeric)  
-- **Hereditary Diseases** – Known hereditary conditions (categorical)  
-- **Number of Dependents** – Number of dependents covered (numeric)  
-- **Smoker** – Smoker status (binary: 1 = yes, 0 = no)  
-- **City** – City of residence (categorical)  
-- **Blood Pressure** – Blood pressure level (numeric)  
-- **Diabetes** – Has diabetes (binary: 1 = yes, 0 = no)  
-- **Regular Exercise** – Exercises regularly (binary)  
-- **Job Title** – Occupation (categorical)  
-- **Claim** – **Target:** Amount claimed (numeric)  
+**Features:**  
+| Feature                | Type        | Description |
+|------------------------|-------------|-------------|
+| Age                    | Numeric     | Age of policyholder |
+| Sex                    | Categorical | Gender |
+| Weight                 | Numeric     | Weight (kg) |
+| BMI                    | Numeric     | Body Mass Index |
+| Hereditary Diseases    | Categorical | Known hereditary conditions |
+| Number of Dependents   | Numeric     | Dependents covered |
+| Smoker                 | Binary      | Smoker status (1=yes, 0=no) |
+| City                   | Categorical | City of residence |
+| Blood Pressure         | Numeric     | Blood pressure level |
+| Diabetes               | Binary      | Diabetes status |
+| Regular Exercise       | Binary      | Regular exercise (1=yes, 0=no) |
+| Job Title              | Categorical | Occupation |
+| Claim (Target)         | Numeric     | Amount claimed |
 
 ---
 
-## 🧪 Workflow
+## 🧪 Workflow  
 
-### 1️⃣ Data Understanding
-- Loaded dataset using **pandas**  
-- Previewed data with `.head()`, `.info()`, `.describe()`  
-- Checked for **missing values**, **duplicates**, and **data types**
+### 1️⃣ Data Understanding  
+- Loaded dataset with **pandas**  
+- Checked missing values, duplicates, and data types  
 
-### 2️⃣ Data Cleaning & Preprocessing
+### 2️⃣ Data Cleaning & Preprocessing  
 - Median imputation for missing values (`Age`, `BMI`)  
-- Encoding of categorical features (`Sex`, `City`, `Hereditary Diseases`, `Job Title`)  
-- Outlier removal using **IQR method**  
-- Feature scaling with **StandardScaler**
+- Categorical encoding (Sex, City, Hereditary Diseases, Job Title)  
+- Outlier removal (**IQR method**)  
+- Feature scaling (**StandardScaler**)  
 
-### 3️⃣ Exploratory Data Analysis (EDA)
+### 3️⃣ Exploratory Data Analysis (EDA)  
 - Histograms & boxplots for numeric features  
 - Countplots for categorical variables  
-- Correlation heatmap for relationships with claim amount
+- Correlation heatmap for relationships with `Claim`  
 
-### 4️⃣ Feature Engineering
+### 4️⃣ Feature Engineering  
 - BMI categories *(Underweight, Healthy, Overweight, Obese)*  
 - Grouped cities into tiers *(optional)*  
-- Dropped redundant/uninformative columns
+- Dropped redundant/uninformative columns  
 
-### 5️⃣ Data Splitting
-- **80% Train / 20% Test** split
+### 5️⃣ Data Splitting  
+- **80% Train / 20% Test** split  
 
-### 6️⃣ Model Training
-Tested multiple regression algorithms:
+### 6️⃣ Model Training  
+Tested multiple regression algorithms:  
 - Linear Regression  
 - Decision Tree Regressor  
-- **✅ Random Forest Regressor (Best performer)**  
+- Random Forest Regressor  
 - Gradient Boosting Regressor  
-- XGBoost Regressor
-
-### 7️⃣ Model Evaluation
-Metrics used:
-- **R² Score**
-- **Mean Absolute Error (MAE)**
-- **Mean Squared Error (MSE)**
-- **Root Mean Squared Error (RMSE)**
-
-📌 **Best Model:** Random Forest Regressor  
-📌 **R² Score:** *0.96*  
-📌 **RMSE:** *2289.23*  
-
-### 8️⃣ Hyperparameter Tuning
-- Tuned **Random Forest** parameters with **GridSearchCV**
-
-### 9️⃣ Feature Importance
-- Top predictors:
-  - **BMI**
-  - **Age**
-  - **Blood Pressure**
-  - **Smoker status**
+- XGBoost Regressor  
 
 ---
 
-## 📈 Insights
-- **BMI, Age, and Smoking status** significantly influence claim amounts  
-- High BMI & smoking habits are linked to **higher claim costs**  
-- Healthy lifestyle choices (exercise, no smoking) reduce predicted claims
+## 📊 Model Performance  
+
+| Model                  | R² Score | RMSE      |
+|------------------------|----------|-----------|
+| Linear Regression      | 0.89     | 3420.17   |
+| Decision Tree          | 0.93     | 2890.54   |
+| **Random Forest** ✅    | **0.96** | **2289.23** |
+| Gradient Boosting      | 0.95     | 2415.78   |
+| XGBoost                | 0.95     | 2398.63   |
+
+🏆 **Best Model:** Random Forest Regressor *(tuned with GridSearchCV)*  
+🔥 **Key Predictors:** BMI, Age, Blood Pressure, Smoker status  
 
 ---
 
-## ⚠️ Limitations
-- Small dataset — may not generalize to all populations  
-- Missing health/lifestyle variables (diet, stress, etc.)  
-- Potential bias from **self-reported data**
+## 📈 Insights  
+- **BMI, Age, and Smoking status** strongly influence claim amounts  
+- Higher BMI & smoking habits → **higher claim costs**  
+- Healthy lifestyle choices → **lower predicted claims**  
 
 ---
 
-## 🚀 Future Work
-- Add external health/lifestyle datasets  
-- Implement **stacked ensemble models** for higher accuracy  
-- Deploy using **Streamlit** / **Flask** for real-time predictions
+## ⚠️ Limitations  
+- Small dataset — may not generalize well  
+- Missing lifestyle variables (diet, stress)  
+- Possible bias from self-reported data  
 
 ---
 
-## 🛠 Tools & Libraries
-- **Python**
-- **pandas**, **numpy**
-- **scikit-learn**
-- **matplotlib**, **seaborn**
-- **XGBoost**
+## 🚀 Future Work  
+- Integrate additional health/lifestyle datasets  
+- Implement **stacked ensemble models** for better accuracy  
+- Deploy via **Streamlit** or **Flask**  
 
 ---
 
-## 📜 Conclusion
-This project demonstrates how **machine learning regression** can effectively estimate health insurance claim amounts based on demographic and lifestyle factors.  
-By leveraging **Random Forest Regressor** with proper preprocessing, feature engineering, and hyperparameter tuning, we achieved strong predictive performance.  
-Such models can help insurance companies:
-- Reduce **financial risks**
-- Improve **premium pricing strategies**
-- Promote **healthier lifestyle incentives**
+## 🛠 Tools & Libraries  
+- Python  
+- pandas, numpy  
+- scikit-learn  
+- matplotlib, seaborn  
+- XGBoost  
 
 ---
 
-## 👤 Author
+## 📜 Conclusion  
+This project shows that **machine learning regression** can effectively predict health insurance claim amounts.  
+Using **Random Forest Regressor** with preprocessing, feature engineering, and tuning, we achieved an **R² of 0.96** and **RMSE of 2289.23**.  
+Such models can help insurers:  
+- Reduce **financial risks**  
+- Improve **premium pricing strategies**  
+- Promote **healthier lifestyle incentives**  
+
+---
+
+## 👤 Author  
 **Mali Satish**  
-*🎓 Machine Learning Enthusiast | Data Science Student @ BHU*
+🎓 *Machine Learning Enthusiast | Data Science Student @ BHU*  
+
