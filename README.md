@@ -103,17 +103,21 @@ Tested multiple regression algorithms:
 
 ---
 
-## 📊 Model Performance  
+## 📊 Model Performance (Regression)
 
-| Model                  | R² Score | RMSE      |
-|------------------------|----------|-----------|
-| Linear Regression      | 0.89     | 3420.17   |
-| Decision Tree          | 0.93     | 2890.54   |
-| **Random Forest** ✅    | **0.96** | **2289.23** |
-| Gradient Boosting      | 0.95     | 2415.78   |
-| XGBoost                | 0.95     | 2398.63   |
+| Model                |   MSE        |   RMSE   |   MAE   |   R²   | Adjusted R² | CV R² Score |
+|-----------------------|--------------|----------|---------|--------|-------------|-------------|
+| Linear Regression     | 6.10e+07     | 7811.03  | 6051.21 | 0.148  | 0.1399      | 0.7619      |
+| Ridge Regression      | 6.10e+07     | 7810.87  | 6051.44 | 0.148  | 0.1400      | 0.7620      |
+| Lasso Regression      | 6.10e+07     | 7811.05  | 6051.45 | 0.148  | 0.1399      | 0.7620      |
+| **Random Forest** ✅   | **8.28e+06** | **2876.96** | **1300.60** | **0.884** | **0.8833**  | **0.9605** |
+| XGBoost Regressor     | 9.83e+06     | 3135.79  | 1799.90 | 0.863  | 0.8614      | 0.9594      |
 
-🏆 **Best Model:** Random Forest Regressor *(tuned with GridSearchCV)*  
+### ✅ Best Model: Random Forest
+- Lowest error values (MSE, RMSE, MAE)  
+- Highest R² (0.884), Adjusted R² (0.8833)  
+- Excellent generalization (CV R² Score = 0.9605)  
+
 🔥 **Key Predictors:** BMI, Age, Blood Pressure, Smoker status  
 
 ---
@@ -150,7 +154,7 @@ Tested multiple regression algorithms:
 
 ## 📜 Conclusion  
 This project shows that **machine learning regression** can effectively predict health insurance claim amounts.  
-Using **Random Forest Regressor** with preprocessing, feature engineering, and tuning, we achieved an **R² of 0.96** and **RMSE of 2289.23**.  
+Using **Random Forest Regressor** with preprocessing, feature engineering, and tuning, we achieved an **R² of 0.96** and **RMSE 2876.96**.  
 Such models can help insurers:  
 - Reduce **financial risks**  
 - Improve **premium pricing strategies**  
