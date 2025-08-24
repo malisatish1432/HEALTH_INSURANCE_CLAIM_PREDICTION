@@ -5,7 +5,7 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)]()
 [![XGBoost](https://img.shields.io/badge/XGBoost-Regressor-red)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
-[![LightGBM](https://img.shields.io/badge/LightGBM-Regressor-lightgreen)]()
+[![LightGBM](https://img.shields.io/badge/AdaBOOST-Regressor-lightgreen)]()
 [![Random Forest](https://img.shields.io/badge/RandomForest-Regression-yellowgreen)]()
 
 
@@ -110,10 +110,10 @@ Tested multiple regression algorithms:
 | Linear Regression     | 6.10e+07     | 7811.03  | 6051.21 | 0.148  | 0.1399      | 0.7619      |
 | Ridge Regression      | 6.10e+07     | 7810.87  | 6051.44 | 0.148  | 0.1400      | 0.7620      |
 | Lasso Regression      | 6.10e+07     | 7811.05  | 6051.45 | 0.148  | 0.1399      | 0.7620      |
-| **Random Forest** ✅   | **8.28e+06** | **2876.96** | **1300.60** | **0.884** | **0.8833**  | **0.9605** |
+| **Random Forest Regressor** ✅   | **8.28e+06** | **2876.96** | **1300.60** | **0.884** | **0.8833**  | **0.9605** |
 | XGBoost Regressor     | 9.83e+06     | 3135.79  | 1799.90 | 0.863  | 0.8614      | 0.9594      |
 
-### ✅ Best Model: Random Forest
+### ✅ Best Model: Random Forest Regressor
 - Lowest error values (MSE, RMSE, MAE)  
 - Highest R² (0.884), Adjusted R² (0.8833)  
 - Excellent generalization (CV R² Score = 0.9605)  
